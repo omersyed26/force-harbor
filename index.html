@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Force Harbor | Healthcare EHR & Digital Health Solutions</title>
-  <meta name="description" content="Force Harbor builds modern EHR and digital health platforms for healthcare systems, government agencies, life sciences, and professional services organizations." />
+  <title>Force Harbor | Salesforce Consulting &amp; Implementation</title>
+  <meta name="description" content="Force Harbor is a Salesforce consulting firm. We implement, integrate, and optimize Sales Cloud, Service Cloud, Data Cloud, Agentforce, and MuleSoft for growing businesses and regulated industries." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>" />
+  <!-- Hide animated elements until Motion runs; removed by script.js if Motion is unavailable or motion is reduced -->
+  <script>
+    document.documentElement.classList.add('js-motion');
+    // Safety net: never leave content hidden if scripts fail to run
+    setTimeout(function () { if (!window.__fhReady) document.documentElement.classList.remove('js-motion'); }, 3000);
+  </script>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
@@ -13,58 +20,77 @@
 
   <!-- NAV -->
   <header class="nav-wrapper">
+    <div class="scroll-progress" id="scrollProgress"></div>
     <nav class="nav">
       <a href="#" class="logo">
         <span class="logo-anchor">⚓</span>
         <span class="logo-text">Force<strong>Harbor</strong></span>
       </a>
       <ul class="nav-links">
-        <li><a href="#services">Solutions</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clouds">Clouds</a></li>
         <li><a href="#industries">Industries</a></li>
-        <li><a href="#tech-stack">Technologies</a></li>
-        <li><a href="#contact" class="btn-nav">Request a Demo</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#contact" class="btn-nav">Book a Consultation</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#services">Solutions</a>
-      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clouds">Clouds</a>
       <a href="#industries">Industries</a>
-      <a href="#tech-stack">Technologies</a>
-      <a href="#contact">Request a Demo</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Book a Consultation</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-bg">
       <div class="hero-orb hero-orb--1"></div>
       <div class="hero-orb hero-orb--2"></div>
       <div class="hero-grid"></div>
     </div>
-    <div class="container hero-content">
-      <div class="hero-badge">HIPAA-Compliant EHR Platform</div>
-      <h1 class="hero-title">
-        Modern EHR Built for<br />
-        <span class="gradient-text">Healthcare That Heals,</span><br />
-        Not Just Documents
-      </h1>
-      <p class="hero-sub">
-        Force Harbor delivers purpose-built Electronic Health Record systems and digital health solutions—designed for hospitals, clinics, government health agencies, and life sciences organizations.
-      </p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn-primary">Request a Demo</a>
-        <a href="#services" class="btn-ghost">Explore Solutions</a>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge" data-hero>Salesforce Consulting &amp; Implementation</div>
+        <h1 class="hero-title" data-hero>
+          Turn Salesforce into<br />
+          your <span class="gradient-text">unfair advantage</span>
+        </h1>
+        <p class="hero-rotator" data-hero>
+          Certified expertise in
+          <span class="rotator" aria-live="polite">
+            <span class="rotator-word" id="rotatorWord">Agentforce</span>
+          </span>
+        </p>
+        <p class="hero-sub" data-hero>
+          Force Harbor designs, builds, and optimizes Salesforce for teams that have outgrown spreadsheets and quick fixes—so your CRM finally works the way your business does.
+        </p>
+        <div class="hero-ctas" data-hero>
+          <a href="#contact" class="btn-primary" data-press>Book a Consultation</a>
+          <a href="#services" class="btn-ghost" data-press>Explore Services</a>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Care Sites Deployed</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">HIPAA</span><span class="stat-label">Fully Compliant</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">HL7 / FHIR</span><span class="stat-label">Standards Ready</span></div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit">
+          <div class="orbit-ring orbit-ring--outer"></div>
+          <div class="orbit-ring orbit-ring--inner"></div>
+          <div class="orbit-track" id="orbitTrack">
+            <div class="orbit-node" style="--a: 0deg"><span class="orbit-label">Sales Cloud</span></div>
+            <div class="orbit-node" style="--a: 72deg"><span class="orbit-label">Service Cloud</span></div>
+            <div class="orbit-node" style="--a: 144deg"><span class="orbit-label">Data Cloud</span></div>
+            <div class="orbit-node" style="--a: 216deg"><span class="orbit-label">Agentforce</span></div>
+            <div class="orbit-node" style="--a: 288deg"><span class="orbit-label">MuleSoft</span></div>
+          </div>
+          <div class="orbit-hub" id="orbitHub">
+            <span class="orbit-hub-icon">⚓</span>
+            <span class="orbit-hub-text">Your Org</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="hero-scroll-indicator">
@@ -73,334 +99,302 @@
     </div>
   </section>
 
+  <!-- PLATFORM MARQUEE -->
+  <div class="marquee" aria-label="Salesforce products we work with">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>Sales Cloud</span><span>Service Cloud</span><span>Agentforce</span><span>Data Cloud</span><span>Health Cloud</span><span>Revenue Cloud</span><span>Marketing Cloud</span><span>MuleSoft</span><span>Tableau</span><span>Slack</span><span>Field Service</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <!-- TODO: replace these placeholder numbers with real figures before publishing -->
+  <section class="stats" data-stagger>
+    <div class="container stats-grid">
+      <div class="stat-card" data-item>
+        <span class="stat-num"><span data-count="50">0</span>+</span>
+        <span class="stat-label">Salesforce projects delivered</span>
+      </div>
+      <div class="stat-card" data-item>
+        <span class="stat-num"><span data-count="25">0</span>+</span>
+        <span class="stat-label">Salesforce certifications</span>
+      </div>
+      <div class="stat-card" data-item>
+        <span class="stat-num"><span data-count="10">0</span>+</span>
+        <span class="stat-label">Years of platform experience</span>
+      </div>
+      <div class="stat-card" data-item>
+        <span class="stat-num"><span data-count="100">0</span>%</span>
+        <span class="stat-label">US-based delivery team</span>
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Our Solutions</div>
-        <h2 class="section-title">EHR, Digital Health &amp;<br />Technology Consulting</h2>
-        <p class="section-sub">From clinical documentation to enterprise cloud architecture, we build and deploy health IT systems backed by the world's leading technologies.</p>
+      <div class="section-header" data-reveal>
+        <div class="section-tag">What We Do</div>
+        <h2 class="section-title">End-to-End<br />Salesforce Services</h2>
+        <p class="section-sub">From your first org to your hundredth automation, we cover the full Salesforce lifecycle—strategy, build, integration, and ongoing care.</p>
       </div>
-      <div class="services-grid">
+      <div class="services-grid" data-stagger>
 
-        <div class="service-card service-card--featured">
-          <div class="service-icon">🏥</div>
-          <h3>EHR Implementation &amp; Configuration</h3>
-          <p>Full-lifecycle deployment of Electronic Health Record systems tailored to your specialty, workflows, and care setting—from ambulatory clinics to health systems.</p>
-          <ul class="service-list">
-            <li>Clinical workflow design &amp; build</li>
-            <li>Patient chart &amp; documentation setup</li>
-            <li>Legacy data migration &amp; reconciliation</li>
-            <li>Go-live command center &amp; training</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
+        <article class="service-card" data-item data-tilt>
+          <div class="service-icon">🚀</div>
+          <h3>Implementation &amp; Rollout</h3>
+          <p>Greenfield launches and re-implementations of Sales Cloud and Service Cloud—configured around your real processes, not a template.</p>
+          <a href="#contact" class="service-link">Start a project <span>→</span></a>
+        </article>
 
-        <div class="service-card">
+        <article class="service-card" data-item data-tilt>
+          <div class="service-icon">🤖</div>
+          <h3>Agentforce &amp; AI</h3>
+          <p>Design, build, and test autonomous agents with Agentforce, Prompt Builder, and Einstein—grounded in your data with the right guardrails.</p>
+          <a href="#contact" class="service-link">Explore AI <span>→</span></a>
+        </article>
+
+        <article class="service-card" data-item data-tilt>
           <div class="service-icon">🔗</div>
-          <h3>Interoperability &amp; HL7/FHIR</h3>
-          <p>Connect disparate health systems, labs, pharmacies, and payers using industry-standard HL7 v2, FHIR R4, and CDA protocols—powered by MuleSoft and native APIs.</p>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
+          <h3>Integration &amp; MuleSoft</h3>
+          <p>Connect Salesforce to ERPs, billing, EHRs, and legacy systems with MuleSoft and API-led architecture that scales instead of breaking.</p>
+          <a href="#contact" class="service-link">Connect systems <span>→</span></a>
+        </article>
 
-        <div class="service-card">
-          <div class="service-icon">💰</div>
-          <h3>Revenue Cycle Management</h3>
-          <p>Streamline billing, coding, prior authorization, and claims adjudication to reduce denials and accelerate reimbursement across all payers.</p>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">📱</div>
-          <h3>Patient Engagement Portal</h3>
-          <p>Secure patient portals and mobile apps for appointment scheduling, telehealth visits, lab results, care plans, and two-way messaging—all HIPAA-compliant.</p>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
-
-        <div class="service-card">
+        <article class="service-card" data-item data-tilt>
           <div class="service-icon">📊</div>
-          <h3>Clinical Analytics &amp; Reporting</h3>
-          <p>Population health dashboards, quality measure tracking (HEDIS, MIPS), and regulatory reporting to support value-based care and accreditation requirements.</p>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
+          <h3>Data Cloud &amp; Analytics</h3>
+          <p>Unify customer data in Data Cloud, then turn it into action with CRM Analytics and Tableau dashboards your leadership will actually use.</p>
+          <a href="#contact" class="service-link">Unify data <span>→</span></a>
+        </article>
 
-        <div class="service-card">
+        <article class="service-card" data-item data-tilt>
+          <div class="service-icon">🛠️</div>
+          <h3>Custom Development</h3>
+          <p>Apex, Lightning Web Components, and Flow built on clean architecture—trigger frameworks, service layers, and tested code you can maintain.</p>
+          <a href="#contact" class="service-link">Build custom <span>→</span></a>
+        </article>
+
+        <article class="service-card" data-item data-tilt>
           <div class="service-icon">🛡️</div>
-          <h3>Health IT Managed Services</h3>
-          <p>Ongoing system administration, security patching, HIPAA compliance audits, and 24/7 uptime monitoring so your clinical operations never skip a beat.</p>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">☁️</div>
-          <h3>Cloud Migration &amp; Architecture</h3>
-          <p>Lift-and-shift or re-architect your health IT workloads to AWS or Salesforce Health Cloud—with HIPAA-eligible infrastructure, auto-scaling, and disaster recovery built in.</p>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🧩</div>
-          <h3>Technology Consulting &amp; Strategy</h3>
-          <p>Independent advisory on EHR vendor selection, Oracle Cerner optimization, Salesforce Health Cloud roadmaps, and enterprise integration strategy for health systems and payers.</p>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
+          <h3>Org Health &amp; Managed Services</h3>
+          <p>Technical-debt cleanup, security reviews, release management, and an on-call admin and dev team so your org keeps improving after go-live.</p>
+          <a href="#contact" class="service-link">Get support <span>→</span></a>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container about-inner">
-      <div class="about-visual">
-        <div class="about-card about-card--1">
-          <div class="about-card-icon">🏆</div>
-          <strong>Certified Health IT</strong>
-          <span>ONC-certified EHR expertise across major platforms</span>
-        </div>
-        <div class="about-card about-card--2">
-          <div class="about-card-icon">🔒</div>
-          <strong>HIPAA-First Design</strong>
-          <span>Security and compliance baked into every layer</span>
-        </div>
-        <div class="about-card about-card--3">
-          <div class="about-card-icon">⚡</div>
-          <strong>Rapid Deployment</strong>
-          <span>Go-live in weeks, not years, with our proven methodology</span>
-        </div>
-        <div class="about-orb"></div>
+  <!-- CLOUDS (interactive tabs) -->
+  <section class="clouds" id="clouds">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <div class="section-tag">Platform Expertise</div>
+        <h2 class="section-title">Every Cloud,<br />One Connected Partner</h2>
+        <p class="section-sub">Pick a product to see how we help teams get more out of it.</p>
       </div>
-      <div class="about-text">
-        <div class="section-tag">About Force Harbor</div>
-        <h2 class="section-title">Your Dedicated<br />Health IT Partner</h2>
-        <p>Force Harbor was built with one mission: to make healthcare technology work for clinicians, patients, and administrators—not the other way around.</p>
-        <p>We combine deep clinical informatics knowledge with modern software engineering to design EHR systems that fit the way care teams actually work. Our team has delivered health IT projects for community health centers, specialty practices, hospital networks, and federal health agencies.</p>
-        <p>When you anchor with Force Harbor, you get a partner committed to interoperability, compliance, and outcomes—staying by your side from implementation through every future upgrade.</p>
-        <a href="#contact" class="btn-primary">Work With Us</a>
+
+      <div class="clouds-shell" data-reveal>
+        <div class="cloud-tabs" role="tablist" aria-label="Salesforce products" id="cloudTabs">
+          <span class="cloud-tab-indicator" id="cloudIndicator"></span>
+          <button class="cloud-tab is-active" role="tab" aria-selected="true" aria-controls="panel-sales" id="tab-sales">Sales Cloud</button>
+          <button class="cloud-tab" role="tab" aria-selected="false" aria-controls="panel-service" id="tab-service" tabindex="-1">Service Cloud</button>
+          <button class="cloud-tab" role="tab" aria-selected="false" aria-controls="panel-agentforce" id="tab-agentforce" tabindex="-1">Agentforce</button>
+          <button class="cloud-tab" role="tab" aria-selected="false" aria-controls="panel-data" id="tab-data" tabindex="-1">Data Cloud</button>
+          <button class="cloud-tab" role="tab" aria-selected="false" aria-controls="panel-health" id="tab-health" tabindex="-1">Health Cloud</button>
+        </div>
+
+        <div class="cloud-panels">
+          <div class="cloud-panel is-active" role="tabpanel" id="panel-sales" aria-labelledby="tab-sales">
+            <div class="cloud-panel-text">
+              <h3>Sales Cloud</h3>
+              <p>Give reps one place to manage pipeline, forecast accurately, and spend less time on data entry.</p>
+            </div>
+            <ul class="cloud-features">
+              <li>Lead-to-cash process design</li>
+              <li>Forecasting &amp; territory management</li>
+              <li>Pipeline automation with Flow</li>
+              <li>CPQ &amp; Revenue Cloud quoting</li>
+            </ul>
+          </div>
+
+          <div class="cloud-panel" role="tabpanel" id="panel-service" aria-labelledby="tab-service" hidden>
+            <div class="cloud-panel-text">
+              <h3>Service Cloud</h3>
+              <p>Resolve cases faster across every channel with a 360° view of each customer.</p>
+            </div>
+            <ul class="cloud-features">
+              <li>Omni-Channel routing &amp; queues</li>
+              <li>Knowledge base &amp; macros</li>
+              <li>Entitlements &amp; SLA milestones</li>
+              <li>Field Service scheduling</li>
+            </ul>
+          </div>
+
+          <div class="cloud-panel" role="tabpanel" id="panel-agentforce" aria-labelledby="tab-agentforce" hidden>
+            <div class="cloud-panel-text">
+              <h3>Agentforce</h3>
+              <p>Deploy AI agents that answer, act, and escalate—securely, on top of your trusted Salesforce data.</p>
+            </div>
+            <ul class="cloud-features">
+              <li>Agent design &amp; topic modeling</li>
+              <li>Custom actions with Apex &amp; Flow</li>
+              <li>Prompt templates &amp; grounding</li>
+              <li>Testing, guardrails &amp; monitoring</li>
+            </ul>
+          </div>
+
+          <div class="cloud-panel" role="tabpanel" id="panel-data" aria-labelledby="tab-data" hidden>
+            <div class="cloud-panel-text">
+              <h3>Data Cloud</h3>
+              <p>Bring every source together into unified profiles that power segmentation, AI, and analytics.</p>
+            </div>
+            <ul class="cloud-features">
+              <li>Data streams &amp; ingestion</li>
+              <li>Identity resolution rules</li>
+              <li>Calculated insights &amp; segments</li>
+              <li>Activation to Marketing &amp; ads</li>
+            </ul>
+          </div>
+
+          <div class="cloud-panel" role="tabpanel" id="panel-health" aria-labelledby="tab-health" hidden>
+            <div class="cloud-panel-text">
+              <h3>Health Cloud</h3>
+              <p>Coordinate care, manage members, and connect clinical systems with HIPAA-aware design.</p>
+            </div>
+            <ul class="cloud-features">
+              <li>Care programs &amp; care plans</li>
+              <li>Provider network management</li>
+              <li>Utilization &amp; prior authorization</li>
+              <li>HL7 / FHIR integration</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- INDUSTRIES -->
-  <section class="expertise" id="industries">
+  <section class="industries" id="industries">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" data-reveal>
         <div class="section-tag">Who We Serve</div>
-        <h2 class="section-title">Industries &amp; Sectors We Specialize In</h2>
-        <p class="section-sub">From federal agencies to community clinics, our platforms are built for the unique regulatory and workflow demands of each sector.</p>
+        <h2 class="section-title">Industry Know-How,<br />Built In</h2>
+        <p class="section-sub">We speak your industry's language—its regulations, its data, and the workflows your teams depend on.</p>
       </div>
-      <div class="industries-vertical">
-
-        <div class="industry-row">
-          <div class="industry-icon-wrap">🏨</div>
-          <div class="industry-body">
-            <h3>Hospitals &amp; Health Systems</h3>
-            <p>Enterprise EHR deployments for multi-site hospital networks—including inpatient, outpatient, ED, and surgical workflows with full ADT and order management integration.</p>
-          </div>
-          <div class="industry-tags">
-            <span>Inpatient EHR</span><span>Clinical Decision Support</span><span>Care Coordination</span>
-          </div>
+      <div class="industries-grid" data-stagger>
+        <div class="industry-card" data-item data-tilt>
+          <div class="industry-icon">🏥</div>
+          <h3>Healthcare &amp; Life Sciences</h3>
+          <p>Health Cloud, patient engagement, and care coordination with HIPAA-conscious architecture.</p>
         </div>
-
-        <div class="industry-row">
-          <div class="industry-icon-wrap">🏛️</div>
-          <div class="industry-body">
-            <h3>Government &amp; Federal Health Agencies</h3>
-            <p>Compliant health IT solutions for VA, Indian Health Service, FQHC networks, and state Medicaid agencies—built to FedRAMP, FISMA, and CMS standards.</p>
-          </div>
-          <div class="industry-tags">
-            <span>FedRAMP Ready</span><span>Medicaid / Medicare</span><span>IHS / VA</span>
-          </div>
+        <div class="industry-card" data-item data-tilt>
+          <div class="industry-icon">🏛️</div>
+          <h3>Public Sector</h3>
+          <p>Case management, constituent portals, and grants on Public Sector Solutions and Government Cloud.</p>
         </div>
-
-        <div class="industry-row">
-          <div class="industry-icon-wrap">🔬</div>
-          <div class="industry-body">
-            <h3>Life Sciences &amp; Biotech</h3>
-            <p>Clinical trial data management, patient registries, pharmacovigilance systems, and regulatory submission workflows aligned with FDA 21 CFR Part 11 and ICH guidelines.</p>
-          </div>
-          <div class="industry-tags">
-            <span>Clinical Trials</span><span>21 CFR Part 11</span><span>Patient Registries</span>
-          </div>
+        <div class="industry-card" data-item data-tilt>
+          <div class="industry-icon">🏦</div>
+          <h3>Financial Services</h3>
+          <p>Client onboarding, relationship management, and compliance tracking on Financial Services Cloud.</p>
         </div>
-
-        <div class="industry-row">
-          <div class="industry-icon-wrap">🩺</div>
-          <div class="industry-body">
-            <h3>Specialty &amp; Ambulatory Practices</h3>
-            <p>Lightweight, specialty-tuned EHR configurations for cardiology, oncology, mental health, primary care, and multi-specialty groups that need speed without sacrificing depth.</p>
-          </div>
-          <div class="industry-tags">
-            <span>Specialty Workflows</span><span>Telehealth</span><span>MIPS / HEDIS</span>
-          </div>
+        <div class="industry-card" data-item data-tilt>
+          <div class="industry-icon">🏭</div>
+          <h3>Manufacturing</h3>
+          <p>Account forecasting, rebate programs, and dealer portals connected to your ERP.</p>
         </div>
-
-        <div class="industry-row">
-          <div class="industry-icon-wrap">🏢</div>
-          <div class="industry-body">
-            <h3>Professional &amp; Managed Care Services</h3>
-            <p>Health plan operations, utilization management, care management platforms, and provider network portals for payers, ACOs, and managed care organizations.</p>
-          </div>
-          <div class="industry-tags">
-            <span>Care Management</span><span>Utilization Review</span><span>Provider Portals</span>
-          </div>
+        <div class="industry-card" data-item data-tilt>
+          <div class="industry-icon">💼</div>
+          <h3>Professional Services</h3>
+          <p>Project, resource, and client delivery management that ties sales to the work.</p>
         </div>
-
-        <div class="industry-row">
-          <div class="industry-icon-wrap">🏘️</div>
-          <div class="industry-body">
-            <h3>Community &amp; Behavioral Health</h3>
-            <p>Trauma-informed EHR systems for FQHCs, RHCs, behavioral health centers, and substance use disorder clinics—designed to meet UDS reporting and grant compliance needs.</p>
-          </div>
-          <div class="industry-tags">
-            <span>FQHC / RHC</span><span>Behavioral Health</span><span>UDS Reporting</span>
-          </div>
+        <div class="industry-card" data-item data-tilt>
+          <div class="industry-icon">🤝</div>
+          <h3>Nonprofit</h3>
+          <p>Donor, program, and volunteer management on Nonprofit Cloud.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- TECHNOLOGY STACK -->
-  <section class="tech-stack" id="tech-stack">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">Technology Partners</div>
-        <h2 class="section-title">Powered by Industry-Leading<br />Health IT Platforms</h2>
-        <p class="section-sub">We hold deep expertise and partnerships across the platforms that run modern healthcare—delivering solutions that are battle-tested, standards-based, and built to scale.</p>
-      </div>
-
-      <!-- PLATFORM CARDS ROW 1: EHR Platforms -->
-      <div class="tech-category-label">EHR Platforms</div>
-      <div class="tech-platform-grid">
-
-        <div class="tech-platform-card">
-          <div class="tech-platform-logo oracle-cerner">
-            <span class="tp-wordmark">Oracle<br/><strong>Cerner</strong></span>
-          </div>
-          <div class="tech-platform-body">
-            <h4>Oracle Cerner</h4>
-            <p>Implementation, optimization, and upgrade services for Oracle Cerner Millennium—the platform powering hundreds of hospitals and health systems worldwide.</p>
-            <div class="tech-pills">
-              <span>Millennium</span><span>PowerChart</span><span>CommunityWorks</span><span>Revenue Cycle</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-platform-card">
-          <div class="tech-platform-logo sf-health">
-            <span class="tp-wordmark">Salesforce<br/><strong>Health Cloud</strong></span>
-          </div>
-          <div class="tech-platform-body">
-            <h4>Salesforce Health Cloud</h4>
-            <p>Patient relationship management, care coordination, and provider network solutions built natively on Salesforce Health Cloud for payers, providers, and life sciences.</p>
-            <div class="tech-pills">
-              <span>Care Programs</span><span>Provider Management</span><span>Prior Auth</span><span>Member 360</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- PLATFORM CARDS ROW 2: Integration & Cloud -->
-      <div class="tech-category-label" style="margin-top:48px;">Integration &amp; Cloud Infrastructure</div>
-      <div class="tech-platform-grid">
-
-        <div class="tech-platform-card">
-          <div class="tech-platform-logo mulesoft">
-            <span class="tp-wordmark">Mule<strong>Soft</strong></span>
-          </div>
-          <div class="tech-platform-body">
-            <h4>MuleSoft Anypoint Platform</h4>
-            <p>Enterprise integration and API management connecting EHR systems, payers, labs, devices, and third-party apps—with pre-built healthcare accelerators for HL7 and FHIR.</p>
-            <div class="tech-pills">
-              <span>API-Led Connectivity</span><span>FHIR Accelerator</span><span>HL7 v2</span><span>Healthcare Shield</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-platform-card">
-          <div class="tech-platform-logo aws">
-            <span class="tp-wordmark">Amazon<br/><strong>Web Services</strong></span>
-          </div>
-          <div class="tech-platform-body">
-            <h4>AWS for Healthcare</h4>
-            <p>HIPAA-eligible cloud infrastructure for health IT workloads—leveraging AWS HealthLake, Amazon Comprehend Medical, and purpose-built services for clinical data and AI.</p>
-            <div class="tech-pills">
-              <span>AWS HealthLake</span><span>Comprehend Medical</span><span>S3 / RDS</span><span>Lambda</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-platform-card">
-          <div class="tech-platform-logo oracle-db">
-            <span class="tp-wordmark">Oracle<br/><strong>Database</strong></span>
-          </div>
-          <div class="tech-platform-body">
-            <h4>Oracle Database &amp; Cloud</h4>
-            <p>High-performance, enterprise-grade data management for clinical data warehouses, healthcare analytics, and mission-critical EHR backends using Oracle DB and Autonomous Database.</p>
-            <div class="tech-pills">
-              <span>Oracle 19c / 21c</span><span>Autonomous DB</span><span>OCI</span><span>Data Guard</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- TECH STACK BADGE BAR -->
-      <div class="tech-badge-bar">
-        <div class="tech-badge-label">Also proficient in</div>
-        <div class="tech-badges">
-          <span class="tbadge">Epic</span>
-          <span class="tbadge">Allscripts</span>
-          <span class="tbadge">athenahealth</span>
-          <span class="tbadge">MEDITECH</span>
-          <span class="tbadge">Azure Health Data Services</span>
-          <span class="tbadge">Google Cloud Healthcare API</span>
-          <span class="tbadge">Redox</span>
-          <span class="tbadge">InterSystems IRIS</span>
-          <span class="tbadge">Rhapsody</span>
-          <span class="tbadge">Snowflake</span>
-          <span class="tbadge">Tableau</span>
-          <span class="tbadge">SMART on FHIR</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process">
-    <div class="container">
-      <div class="section-header">
+  <!-- APPROACH (scroll-linked timeline) -->
+  <section class="approach" id="approach">
+    <div class="container approach-inner">
+      <div class="approach-intro" data-reveal>
         <div class="section-tag">How We Work</div>
-        <h2 class="section-title">Our Delivery Process</h2>
+        <h2 class="section-title">A Proven Path<br />to Go-Live</h2>
+        <p class="section-sub">Short, transparent sprints with demos every step of the way. No black boxes, no surprises at launch.</p>
+        <a href="#contact" class="btn-primary" data-press>Plan Your Project</a>
       </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="process-num">01</div>
-          <h3>Assess</h3>
-          <p>Clinical workflow analysis, legacy system audit, and regulatory gap assessment to define a clear health IT roadmap.</p>
+      <ol class="timeline" id="timeline">
+        <span class="timeline-line"><span class="timeline-fill" id="timelineFill"></span></span>
+        <li class="timeline-step" data-step>
+          <span class="timeline-dot">01</span>
+          <div>
+            <h3>Discover</h3>
+            <p>Stakeholder workshops, org assessment, and a prioritized roadmap tied to business outcomes.</p>
+          </div>
+        </li>
+        <li class="timeline-step" data-step>
+          <span class="timeline-dot">02</span>
+          <div>
+            <h3>Design</h3>
+            <p>Solution architecture, data model, security, and integration blueprints—reviewed with your team.</p>
+          </div>
+        </li>
+        <li class="timeline-step" data-step>
+          <span class="timeline-dot">03</span>
+          <div>
+            <h3>Build</h3>
+            <p>Agile sprints with config, Flow, Apex, and LWC—each one demoed and tested before moving on.</p>
+          </div>
+        </li>
+        <li class="timeline-step" data-step>
+          <span class="timeline-dot">04</span>
+          <div>
+            <h3>Launch</h3>
+            <p>Data migration, UAT, training, and a hands-on go-live with hypercare support.</p>
+          </div>
+        </li>
+        <li class="timeline-step" data-step>
+          <span class="timeline-dot">05</span>
+          <div>
+            <h3>Evolve</h3>
+            <p>Adoption tracking, release planning, and continuous improvements as Salesforce ships new features.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="about" id="about">
+    <div class="container about-inner">
+      <div class="about-visual" aria-hidden="true">
+        <div class="about-card about-card--1" data-float>
+          <div class="about-card-icon">🏆</div>
+          <strong>Certified Experts</strong>
+          <span>Architects, developers, and admins who live in Salesforce</span>
         </div>
-        <div class="process-arrow">→</div>
-        <div class="process-step">
-          <div class="process-num">02</div>
-          <h3>Design</h3>
-          <p>Co-design EHR architecture with your clinical and IT stakeholders—specialty templates, data models, and integration blueprints.</p>
+        <div class="about-card about-card--2" data-float>
+          <div class="about-card-icon">⚡</div>
+          <strong>Fast, Agile Delivery</strong>
+          <span>Working software in weeks, not quarters</span>
         </div>
-        <div class="process-arrow">→</div>
-        <div class="process-step">
-          <div class="process-num">03</div>
-          <h3>Build &amp; Validate</h3>
-          <p>Iterative development with clinical end-user testing, UAT, and security/compliance validation before go-live.</p>
+        <div class="about-card about-card--3" data-float>
+          <div class="about-card-icon">🔒</div>
+          <strong>Security First</strong>
+          <span>Least-privilege access and compliance by design</span>
         </div>
-        <div class="process-arrow">→</div>
-        <div class="process-step">
-          <div class="process-num">04</div>
-          <h3>Launch &amp; Optimize</h3>
-          <p>Phased go-live with at-the-elbow support, post-live optimization sprints, and ongoing managed services.</p>
-        </div>
+        <div class="about-orb"></div>
+      </div>
+      <div class="about-text" data-reveal>
+        <div class="section-tag">Why Force Harbor</div>
+        <h2 class="section-title">Your Safe Harbor<br />for Salesforce</h2>
+        <p>Too many Salesforce orgs end up as expensive, cluttered databases. We started Force Harbor to fix that—pairing senior Salesforce talent with a practical, business-first mindset.</p>
+        <p>You work directly with the people building your solution. We document what we build, follow Salesforce best practices, and leave your team confident to own it.</p>
+        <p>Whether you need a full implementation, a rescue project, or a trusted team on call, we stay anchored with you long after go-live.</p>
+        <a href="#contact" class="btn-primary" data-press>Work With Us</a>
       </div>
     </div>
   </section>
@@ -408,22 +402,22 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container contact-inner">
-      <div class="contact-text">
+      <div class="contact-text" data-reveal>
         <div class="section-tag">Get Started</div>
-        <h2 class="section-title">Ready to Modernize<br />Your Health IT Systems?</h2>
-        <p>Tell us about your organization and clinical goals. We'll get back to you within one business day.</p>
+        <h2 class="section-title">Let's Build Your<br />Salesforce Roadmap</h2>
+        <p>Tell us where you are and where you want to go. We'll respond within one business day with next steps—no sales pitch.</p>
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-icon">✉️</span>
-            <a href="/cdn-cgi/l/email-protection#93fbf6fffffcd3f5fce1f0f6befbf2e1f1fce1bdf0fcfe"><span class="__cf_email__" data-cfemail="620a070e0e0d22040d1001074f0a0310000d104c010d0f">[email&#160;protected]</span></a>
+            <a href="mailto:hello@force-harbor.com">hello@force-harbor.com</a>
           </div>
           <div class="contact-item">
             <span class="contact-icon">🌐</span>
-            <span>force-harbor.com</span>
+            <span>forceharbor.com</span>
           </div>
         </div>
       </div>
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" data-reveal>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Full Name</label>
@@ -439,25 +433,23 @@
           <input type="text" id="company" name="company" placeholder="Your company name" />
         </div>
         <div class="form-group">
-          <label for="service">Service Interested In</label>
+          <label for="service">How Can We Help?</label>
           <select id="service" name="service">
-            <option value="">Select a solution...</option>
-            <optgroup label="EHR &amp; Clinical">
-              <option>EHR Implementation (Oracle Cerner)</option>
-              <option>EHR Implementation (Salesforce Health Cloud)</option>
-              <option>Interoperability &amp; HL7/FHIR (MuleSoft)</option>
-              <option>Revenue Cycle Management</option>
-              <option>Patient Engagement Portal</option>
-              <option>Clinical Analytics &amp; Reporting</option>
-              <option>Health IT Managed Services</option>
+            <option value="">Select a service...</option>
+            <optgroup label="Services">
+              <option>New Salesforce Implementation</option>
+              <option>Agentforce &amp; AI</option>
+              <option>Integration &amp; MuleSoft</option>
+              <option>Data Cloud &amp; Analytics</option>
+              <option>Custom Development (Apex / LWC)</option>
+              <option>Org Health Check &amp; Optimization</option>
+              <option>Managed Services &amp; Support</option>
             </optgroup>
-            <optgroup label="Technology Consulting">
-              <option>Cloud Migration (AWS / Azure)</option>
-              <option>Oracle Database Architecture</option>
-              <option>EHR Vendor Selection &amp; Strategy</option>
-              <option>Enterprise Integration Strategy</option>
-              <option>Government / Federal Health IT</option>
-              <option>Life Sciences / Clinical Trials</option>
+            <optgroup label="Products">
+              <option>Sales Cloud</option>
+              <option>Service Cloud</option>
+              <option>Health Cloud</option>
+              <option>Something else</option>
             </optgroup>
           </select>
         </div>
@@ -465,7 +457,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="4" placeholder="Tell us about your project or challenge..."></textarea>
         </div>
-        <button type="submit" class="btn-primary btn-full">Send Message →</button>
+        <button type="submit" class="btn-primary btn-full" data-press>Send Message →</button>
       </form>
     </div>
   </section>
@@ -478,37 +470,39 @@
           <span class="logo-anchor">⚓</span>
           <span class="logo-text">Force<strong>Harbor</strong></span>
         </a>
-        <p>Anchoring healthcare organizations to modern, compliant EHR &amp; digital health systems.</p>
+        <p>Salesforce consulting that keeps your business anchored, connected, and moving forward.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <strong>Solutions</strong>
-          <a href="#services">EHR Implementation</a>
-          <a href="#services">Interoperability</a>
-          <a href="#services">Revenue Cycle</a>
-          <a href="#services">Cloud Migration</a>
-          <a href="#services">Tech Consulting</a>
+          <strong>Services</strong>
+          <a href="#services">Implementation</a>
+          <a href="#services">Agentforce &amp; AI</a>
+          <a href="#services">Integration</a>
+          <a href="#services">Custom Development</a>
+          <a href="#services">Managed Services</a>
         </div>
         <div class="footer-col">
-          <strong>Technologies</strong>
-          <a href="#tech-stack">Oracle Cerner</a>
-          <a href="#tech-stack">Salesforce Health Cloud</a>
-          <a href="#tech-stack">MuleSoft</a>
-          <a href="#tech-stack">AWS</a>
-          <a href="#tech-stack">Oracle Database</a>
-        </div>
-        <div class="footer-col">
-          <strong>Industries</strong>
-          <a href="#industries">Hospitals</a>
-          <a href="#industries">Government</a>
-          <a href="#industries">Life Sciences</a>
-          <a href="#industries">Community Health</a>
+          <strong>Clouds</strong>
+          <a href="#clouds">Sales Cloud</a>
+          <a href="#clouds">Service Cloud</a>
+          <a href="#clouds">Data Cloud</a>
+          <a href="#clouds">Health Cloud</a>
         </div>
         <div class="footer-col">
           <strong>Company</strong>
-          <a href="#about">About Us</a>
+          <a href="#about">Why Force Harbor</a>
+          <a href="#approach">Our Approach</a>
+          <a href="#industries">Industries</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
     </div>
-    <div class="footer-
+    <div class="footer-bottom">
+      <p>© 2026 Force Harbor. All rights reserved. Salesforce, Agentforce, Sales Cloud, Service Cloud, and other names are trademarks of Salesforce, Inc.</p>
+    </div>
+  </footer>
+
+  <script src="vendor/motion.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
